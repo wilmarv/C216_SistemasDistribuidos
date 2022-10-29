@@ -24,9 +24,16 @@ public class Fornecedor {
 	@Size(max = 200)
 	private String razaoSocial;
 
-	@ManyToMany(mappedBy = "listaProduto")
+	@ManyToMany
 	private List<Produto> listaProduto;
 
+	public Fornecedor() {
+	}
+
+	public Fornecedor(String razaoSocial) {
+		super();
+		this.razaoSocial = razaoSocial;
+	}
 
 	public Long getId() {
 		return id;
@@ -51,7 +58,7 @@ public class Fornecedor {
 	public void setListaProduto(List<Produto> listaProduto) {
 		this.listaProduto = listaProduto;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -67,6 +74,11 @@ public class Fornecedor {
 			return false;
 		Fornecedor other = (Fornecedor) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Fornecedor [id=" + id + ", razaoSocial=" + razaoSocial + "]";
 	}
 
 }

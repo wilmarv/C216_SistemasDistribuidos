@@ -23,9 +23,16 @@ public class Produto {
 	@NotBlank
 	@Size(max = 100)
 	private String descricao;
-	
-	@ManyToMany
+
+	@ManyToMany(mappedBy = "listaProduto")
 	private List<Fornecedor> listaFornecedor;
+
+	public Produto() {}
+
+	public Produto(String descricao) {
+		super();
+		this.descricao = descricao;
+	}
 
 	public Long getId() {
 		return id;
@@ -67,5 +74,12 @@ public class Produto {
 		Produto other = (Produto) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", descricao=" + descricao + "]";
+	}
+	
+	
 
 }

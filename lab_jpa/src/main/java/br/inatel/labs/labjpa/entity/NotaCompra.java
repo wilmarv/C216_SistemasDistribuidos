@@ -30,6 +30,15 @@ public class NotaCompra {
 	@OneToMany(mappedBy = "notaCompra")
 	private List<NotaCompraItem> listaNotaCompraItem;
 
+	public NotaCompra() {
+	}
+
+	public NotaCompra(LocalDate dataEmissao, Fornecedor fornecedor) {
+		super();
+		this.dataEmissao = dataEmissao;
+		this.fornecedor = fornecedor;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -84,4 +93,9 @@ public class NotaCompra {
 				BigDecimal::add);
 	}
 
+	@Override
+	public String toString() {
+		return "NotaCompra [id=" + id + ", dataEmissao=" + dataEmissao + "]";
+	}
+	
 }
