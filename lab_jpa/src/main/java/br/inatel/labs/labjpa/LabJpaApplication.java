@@ -1,13 +1,13 @@
-package br.inatel.labs.labRest.server;
+package br.inatel.labs.labjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LabRestServerApplication {
+public class LabJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LabRestServerApplication.class, args);
+		SpringApplication.run(LabJpaApplication.class, args);
 	}
 
 }
