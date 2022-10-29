@@ -18,8 +18,7 @@ public class ProdutoService {
 	private EntityManager em;
 
 	public Produto salvar(Produto p) {
-		em.merge(p);
-		return p;
+		return em.merge(p);
 	}
 
 	public Produto buscarPeloId(Long id) {

@@ -20,8 +20,7 @@ public class NotaCompraService {
 
 	// 1.Nota Compra
 	public NotaCompra salvarNotaCompra(NotaCompra nc) {
-		em.merge(nc);
-		return nc;
+		return em.merge(nc);
 	}
 
 	public NotaCompra buscarNotaCompraPeloId(Long id) {
@@ -35,8 +34,7 @@ public class NotaCompraService {
 	// 2. Nota Compra Item
 
 	public NotaCompraItem salvarNotaCompraItem(NotaCompraItem item) {
-		em.merge(item);
-		return item;
+		return em.merge(item);
 	}
 
 	public NotaCompraItem buscarNotaCompraItemPeloId(Long id) {
@@ -44,7 +42,7 @@ public class NotaCompraService {
 	}
 
 	public List<NotaCompraItem> listarNotaCompraItem() {
-		return em.createQuery("select item from NotaCompra item", NotaCompraItem.class).getResultList();
+		return em.createQuery("select item from NotaCompraItem item", NotaCompraItem.class).getResultList();
 	}
 
 }

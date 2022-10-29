@@ -18,8 +18,7 @@ public class FornecedorService {
 	private EntityManager em;
 
 	public Fornecedor salvar(Fornecedor f) {
-		em.merge(f);
-		return f;
+		return em.merge(f);
 	}
 
 	public Fornecedor buscarPeloId(Long id) {
