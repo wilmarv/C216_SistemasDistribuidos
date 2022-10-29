@@ -16,7 +16,7 @@ import br.inatel.labs.labjpa.service.FornecedorService;
 import br.inatel.labs.labjpa.service.NotaCompraService;
 import br.inatel.labs.labjpa.service.ProdutoService;
 
-@SpringBootTest
+//@SpringBootTest
 class DataLoader {
 
 	@Autowired
@@ -28,7 +28,7 @@ class DataLoader {
 	@Autowired
 	private NotaCompraService notaCompraService;
 
-	@Test
+	//@Test
 	void load() {
 
 		// 1.produto
