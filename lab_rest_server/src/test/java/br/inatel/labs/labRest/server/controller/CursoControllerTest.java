@@ -53,4 +53,23 @@ class CursoControllerTest {
 		assertThat(cursoRespondido).isNotNull();
 		assertThat(cursoRespondido.getId()).isNotNull();
 	}
+
+	@Test
+	void dadoCursoExistente_quandoPutCurso_entaoRespondeComStatusAcceptedECorpoVazio() {
+		Curso cursoExistente = new Curso();
+		cursoExistente.setId(1L);
+		cursoExistente.setDescricao("Descricao atualizada");
+		cursoExistente.setCargaHoraria(111);
+
+		webTestClient.put().uri("/curso").bodyValue(cursoExistente).exchange().expectStatus().isAccepted().expectBody()
+				.isEmpty();
+
+	}
+
+	@Test
+	void dadoCursoIdValido_quandoDeleteCursoPeloId_entaoRespondeComStatusNoContent() {
+		Long cursoIdValido = 2L;
+
+		webTestClient.delete().uri("curso/" + cursoIdValido).exchange().expectStatus().isNoContent();
+	}
 }
